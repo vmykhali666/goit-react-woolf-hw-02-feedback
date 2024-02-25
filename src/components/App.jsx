@@ -1,16 +1,29 @@
+import { useState } from 'react';
+import { Feedback } from './Feedback/Feedback';
+
 export const App = () => {
+  const [feedback, setFeedback] = useState('');
+
+  const handleFeedbackChange = event => {
+    setFeedback(event.target.value);
+  };
+
   return (
     <div
       style={{
         height: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
+        color: '#010101',
       }}
     >
-      React homework template
+      <Feedback
+        text="Please leave feedback"
+        value={feedback}
+        onChange={handleFeedbackChange}
+      />
     </div>
   );
 };
