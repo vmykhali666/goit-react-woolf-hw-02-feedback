@@ -1,10 +1,7 @@
 import React from 'react';
 import styles from 'styles/Statistics.module.css';
 
-export const Statistics = (props) => {
-    const { good, neutral, bad } = props;
-    const total = good + neutral + bad;
-    const positivePercentage = total ? (good / total) * 100 : 0;
+export const Statistics = ({ good, neutral, bad,total, positivePercentage }) => {
 
     return (
         <div className={styles.statistics}>
